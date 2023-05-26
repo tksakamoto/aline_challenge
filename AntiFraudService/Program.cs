@@ -24,6 +24,7 @@ app.MapPost("/api/fraudcheck", (TransactionModel transaction) =>
     transaction.TransactionStatusId = transaction.Value <= 1000 ? (int)TransactionStatusEnum.approved : (int)TransactionStatusEnum.rejected;
     
     return Results.Ok(transaction);
+    
 });
 
 app.Run();
